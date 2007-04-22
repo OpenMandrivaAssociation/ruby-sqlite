@@ -3,14 +3,14 @@
 %define oname %{rname}-ruby
 
 %define version 2.2.3
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: Ruby interface for the SQLite database engine
 Name: %name
 Version: %version
 Release: %release
 License: BSD-like
-Group: Development/Other
+Group: Development/Ruby
 URL: http://rubyforge.org/projects/sqlite-ruby/
 Source0: %{oname}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-buildroot
@@ -18,9 +18,6 @@ BuildRequires: ruby-devel sqlite-devel
 # For the tests
 BuildRequires: sqlite-tools
 Provides: %{oname}
-
-%{expand:%%define ruby_libdir %(ruby -rrbconfig -e "puts Config::CONFIG['sitelibdir']")}
-%{expand:%%define ruby_archdir %(ruby -rrbconfig -e "puts Config::CONFIG['sitearchdir']")}
 
 %description
 Ruby interface for the SQLite database engine.
@@ -47,7 +44,7 @@ make -C build DESTDIR=%buildroot install
 
 %files
 %defattr(-,root,root)
-%{ruby_libdir}/%{rname}*
-%{ruby_archdir}/%{rname}*
+%{ruby_sitelibdir}/%{rname}*
+%{ruby_sitearchdir}/%{rname}*
 %doc ChangeLog LICENSE api doc
 
