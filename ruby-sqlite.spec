@@ -11,7 +11,7 @@ Version: %version
 Release: %release
 License: BSD-like
 Group: Development/Ruby
-URL: http://rubyforge.org/projects/sqlite-ruby/
+URL: https://rubyforge.org/projects/sqlite-ruby/
 Source0: %{oname}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: ruby-devel sqlite-devel
