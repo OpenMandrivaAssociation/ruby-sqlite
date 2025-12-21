@@ -14,6 +14,7 @@ Group: Development/Ruby
 URL: https://rubyforge.org/projects/sqlite-ruby/
 Source0: %{oname}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-buildroot
+BuildRequires:	make
 BuildRequires: ruby-devel sqlite-devel
 # For the tests
 BuildRequires: sqlite-tools
